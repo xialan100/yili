@@ -5,8 +5,9 @@ import { solutions } from "../data";
 
 const recommendedRoles = ["校长/管理层", "教务/德育/学工负责人", "教师发展/教研团队", "区级督导/项目负责人"];
 
-export default function SolutionDetail({ params }: { params: { slug: string } }) {
-  const solution = solutions.find((s) => s.slug === params.slug);
+export default async function SolutionDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const solution = solutions.find((s) => s.slug === slug);
   if (!solution) return notFound();
 
   return (

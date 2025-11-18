@@ -343,53 +343,72 @@ export default async function CasePage({ params }: Params) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(59,130,246,0.28),transparent_30%),radial-gradient(circle_at_80%_0%,rgba(45,212,191,0.2),transparent_30%),linear-gradient(135deg,#0b1223,#0d172e)]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(60deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:140px_140px]" />
-      <main className="mx-auto flex max-w-4xl flex-col gap-10 px-6 pb-16 pt-16 sm:px-10">
-        <div className="flex items-center justify-between gap-2">
+    <div className="relative min-h-screen overflow-hidden bg-[#f5f8ff] text-[#0f172a]">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(22,119,255,0.18),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(122,216,255,0.16),transparent_35%),linear-gradient(135deg,#e8f1ff,#f7faff)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-[#1677ff]/12 via-white/70 to-transparent" />
+      <main className="mx-auto flex max-w-5xl flex-col gap-10 px-6 pb-16 pt-16 sm:px-10">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-blue-200">Case Study</p>
-            <h1 className="mt-2 text-3xl font-semibold text-white">{detail.name}</h1>
+            <p className="text-sm uppercase tracking-[0.18em] text-[#1677ff]">Case Study</p>
+            <h1 className="mt-2 text-3xl font-semibold text-[#0f172a]">{detail.name}</h1>
           </div>
-          <Link className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/20 hover:bg-white/15" href="/#cases">
+          <Link className="hover-glow inline-flex items-center gap-2 rounded-full bg-[#1677ff] px-4 py-2 text-sm font-semibold text-white shadow-md shadow-[rgba(22,119,255,0.35)] ring-1 ring-white/60 hover:bg-[#0f5fd8]" href="/#cases">
             返回列表
           </Link>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-3">
-          {detail.basics.map((item) => (
-            <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white shadow-lg shadow-blue-900/30 backdrop-blur">
-              {item}
+        <div className="grid gap-4 rounded-3xl border border-[#d9e2f5] bg-white/95 p-6 shadow-xl shadow-blue-50/70 ring-1 ring-[#e8eefc]">
+          <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+            <div className="space-y-3">
+              <p className="text-xs uppercase tracking-[0.18em] text-[#1677ff]">故事开场 · 场景全貌</p>
+              <h2 className="text-2xl font-semibold text-[#0f172a]">学校在解决什么问题？</h2>
+              <p className="text-slate-700 leading-7">{detail.background}</p>
             </div>
-          ))}
+            <div className="grid gap-2 rounded-2xl border border-[#e0eaff] bg-[#f7faff] p-4 shadow-inner shadow-blue-50/60">
+              <p className="text-sm font-semibold text-[#0f172a]">基本信息</p>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {detail.basics.map((item) => (
+                  <div key={item} className="rounded-xl bg-white/90 px-3 py-2 text-sm text-slate-700 ring-1 ring-[#e8eefc] shadow-sm">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="grid gap-4 rounded-2xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
-          <h2 className="text-xl font-semibold text-white">项目背景与痛点</h2>
-          <p className="text-slate-100">{detail.background}</p>
-        </div>
-
-        <div className="grid gap-4 rounded-2xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
-          <h2 className="text-xl font-semibold text-white">解决方案</h2>
-          <ul className="grid gap-3 text-slate-100">
-            {detail.solutions.map((item) => (
-              <li key={item} className="rounded-xl bg-white/5 px-3 py-3 ring-1 ring-white/10">
-                {item}
-              </li>
+        <div className="grid gap-4 rounded-3xl border border-[#d9e2f5] bg-white/95 p-6 shadow-xl shadow-blue-50/70 ring-1 ring-[#e8eefc]">
+          <div className="flex items-center gap-2">
+            <p className="text-xs uppercase tracking-[0.18em] text-[#1677ff]">解决路径</p>
+            <span className="rounded-full bg-[#f0f6ff] px-2 py-1 text-[11px] text-[#0f294d] ring-1 ring-[#c7d8ff]">从痛点到落地</span>
+          </div>
+          <div className="mt-3 grid gap-3">
+            {detail.solutions.map((item, idx) => (
+              <div
+                key={item}
+                className="flex gap-3 rounded-2xl bg-[#f7faff] p-4 ring-1 ring-[#e0eaff] shadow-sm shadow-blue-50/60"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e8f1ff] text-sm font-semibold text-[#1677ff]">
+                  {idx + 1}
+                </div>
+                <p className="text-slate-700 leading-6">{item}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
-        <div className="grid gap-4 rounded-2xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
-          <h2 className="text-xl font-semibold text-white">成效与变化</h2>
-          <ul className="grid gap-3 text-slate-100">
+        <div className="grid gap-4 rounded-3xl border border-[#d9e2f5] bg-white/95 p-6 shadow-xl shadow-blue-50/70 ring-1 ring-[#e8eefc]">
+          <div className="flex items-center gap-2">
+            <p className="text-xs uppercase tracking-[0.18em] text-[#1677ff]">结果与变化</p>
+            <span className="rounded-full bg-[#f0f6ff] px-2 py-1 text-[11px] text-[#0f294d] ring-1 ring-[#c7d8ff]">用户视角</span>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2">
             {detail.effects.map((item) => (
-              <li key={item} className="rounded-xl bg-white/5 px-3 py-3 ring-1 ring-white/10">
-                {item}
-              </li>
+              <div key={item} className="rounded-2xl bg-[#f7faff] p-4 ring-1 ring-[#e0eaff] shadow-sm shadow-blue-50/60">
+                <p className="text-slate-700 leading-6">{item}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </main>
     </div>
