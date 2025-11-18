@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "屹力 | 智能制造与工业工程伙伴",
+  title: "屹力 | 教育科技伙伴",
   description:
-    "屹力为企业提供智能制造、工业建筑与自动化改造的端到端解决方案，交付安全、高效、可持续的标杆工厂。",
+    "屹力专注教育科技，提供数字化教学与运营解决方案，助力学校与机构提升学习体验与管理效率。",
 };
 
 export default function RootLayout({
