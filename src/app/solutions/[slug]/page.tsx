@@ -173,3 +173,7 @@ export default async function SolutionDetail({ params }: { params: Promise<{ slu
     </section>
   );
 }
+
+export function generateStaticParams() {
+  return solutions.map((s) => ({ slug: s.slug }));
+}

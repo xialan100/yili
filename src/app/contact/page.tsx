@@ -37,8 +37,8 @@ export default function ContactPage() {
             className="h-10 w-10 rounded-lg object-contain"
             priority
           />
-          <div>
-            <p className="text-sm font-semibold text-[#1677ff]">Yili Education</p>
+          <div className="w-[180px] leading-tight">
+            <p className="text-base font-semibold text-[#1677ff]">Yili Education</p>
             <p className="text-base font-semibold text-[#1677ff]">屹力教育</p>
           </div>
         </Link>

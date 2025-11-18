@@ -320,10 +320,6 @@ const caseDetails: CaseDetail[] = [
   },
 ];
 
-export function generateStaticParams() {
-  return caseDetails.map((item) => ({ slug: item.slug }));
-}
-
 type Params = { params: Promise<{ slug: string }> };
 
 export default async function CasePage({ params }: Params) {
@@ -413,4 +409,8 @@ export default async function CasePage({ params }: Params) {
       </main>
     </div>
   );
+}
+
+export function generateStaticParams() {
+  return caseDetails.map((c) => ({ slug: c.slug }));
 }
