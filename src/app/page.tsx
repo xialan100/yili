@@ -24,6 +24,8 @@ import fs from "fs";
 import path from "path";
 import { allCases } from "./cases/case-list";
 
+const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX ?? "";
+
 const ctas = [
   { label: "了解解决方案", href: "#solutions" },
   { label: "查看客户案例", href: "#cases" },
@@ -190,7 +192,7 @@ export default function Home() {
     const size = uniqueLogoFiles.length;
     const step = 7 + row * 3;
     const arranged = Array.from({ length: size }, (_, i) => uniqueLogoFiles[(i * step) % size]);
-    const track = [...arranged, ...arranged].map((file) => `/logos/学校logo_图片/${file}`);
+    const track = [...arranged, ...arranged].map((file) => `${assetPrefix}/logos/学校logo_图片/${file}`);
     const base = 260;
     return { track, speed: row === 1 ? base + 60 : base };
   });
@@ -205,7 +207,7 @@ export default function Home() {
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 pt-8 sm:px-12 lg:px-16">
         <div className="flex items-center gap-3">
           <Image
-            src="/branding/logo.png"
+            src={`${assetPrefix}/branding/logo.png`}
             alt="Yili Education"
             width={40}
             height={40}
@@ -714,7 +716,7 @@ export default function Home() {
                       </div>
                       <div className="flex h-32 w-32 items-center justify-center overflow-hidden rounded-xl border border-white/45 bg-white/15 ring-1 ring-white/20">
                         <Image
-                          src={qr.src}
+                          src={`${assetPrefix}${qr.src}`}
                           alt={qr.label}
                           width={140}
                           height={140}
@@ -733,7 +735,7 @@ export default function Home() {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <Image
-                src="/branding/logo.png"
+                src={`${assetPrefix}/branding/logo.png`}
                 alt="Yili Education"
                 width={40}
                 height={40}

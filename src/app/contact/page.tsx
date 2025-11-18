@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { ArrowRight, Phone, Building2, NotebookPen, User } from "lucide-react";
 import Image from "next/image";
+const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX ?? "";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -30,7 +31,7 @@ export default function ContactPage() {
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 sm:px-10">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/branding/logo.png"
+            src={`${assetPrefix}/branding/logo.png`}
             alt="Yili Education"
             width={40}
             height={40}
