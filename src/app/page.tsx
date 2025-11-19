@@ -204,8 +204,8 @@ export default function Home() {
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(22,119,255,0.06)_1px,transparent_1px),linear-gradient(60deg,rgba(22,119,255,0.06)_1px,transparent_1px)] bg-[length:140px_140px]" />
       <div className="pointer-events-none absolute -left-28 top-10 -z-10 h-72 w-72 rounded-full bg-[#8cdfff] opacity-40 blur-3xl ani-blob-slow" />
       <div className="pointer-events-none absolute -right-24 top-32 -z-10 h-64 w-64 rounded-full bg-[#1677ff] opacity-35 blur-3xl ani-blob-slower" />
-      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 pt-8 sm:px-12 lg:px-16">
-        <div className="flex items-center gap-3">
+      <header className="mx-auto flex max-w-7xl items-center justify-between px-4 pt-6 sm:px-12 lg:px-16">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Image
             src={`${assetPrefix}/branding/logo.png`}
             alt="Yili Education"
@@ -219,32 +219,32 @@ export default function Home() {
             <p className="text-base font-semibold text-[#1677ff]">屹力教育</p>
           </div>
         </div>
-        <nav className="hidden items-center gap-4 text-sm text-slate-700 sm:flex">
-          <Link className="rounded-full px-3 py-2 hover:bg-blue-50/80 hover:text-[#0f172a]" href="/solutions">
+        <nav className="hidden items-center gap-3 text-sm text-slate-700 sm:flex">
+          <Link className="rounded-full px-3 py-1.5 hover:bg-blue-50/80 hover:text-[#0f172a]" href={`${assetPrefix}/solutions/`}>
             解决方案
           </Link>
-          <a className="rounded-full px-3 py-2 hover:bg-blue-50/80 hover:text-[#0f172a]" href="#cases">案例</a>
-          <a className="rounded-full px-3 py-2 hover:bg-blue-50/80 hover:text-[#0f172a]" href="#team">团队</a>
-          <a className="rounded-full px-3 py-2 hover:bg-blue-50/80 hover:text-[#0f172a]" href="#jobs">加入我们</a>
+          <a className="rounded-full px-3 py-1.5 hover:bg-blue-50/80 hover:text-[#0f172a]" href="#cases">案例</a>
+          <a className="rounded-full px-3 py-1.5 hover:bg-blue-50/80 hover:text-[#0f172a]" href="#team">团队</a>
+          <a className="rounded-full px-3 py-1.5 hover:bg-blue-50/80 hover:text-[#0f172a]" href="#jobs">加入我们</a>
         </nav>
       </header>
-      <main className="mx-auto flex max-w-7xl flex-col gap-24 px-6 pb-28 pt-10 sm:px-12 lg:px-16 lg:gap-28 xl:gap-32">
-        <section className="flex flex-col gap-10">
-          <div className="space-y-8">
-              <span className="badge-pulse inline-flex items-center gap-2 rounded-full bg-[#e8f1ff] px-4 py-2 text-sm font-medium text-[#0f294d] ring-1 ring-[#c7d8ff] shadow-sm">
+      <main className="mx-auto flex max-w-7xl flex-col gap-12 px-4 pb-16 pt-6 sm:px-12 lg:px-16 lg:gap-28 xl:gap-32">
+        <section className="flex flex-col gap-8 sm:gap-10">
+          <div className="space-y-6 sm:space-y-8">
+              <span className="badge-pulse inline-flex items-center gap-2 rounded-full bg-[#e8f1ff] px-4 py-2 text-xs sm:text-sm font-medium text-[#0f294d] ring-1 ring-[#c7d8ff] shadow-sm">
                 <Sparkles className="float-soft h-4 w-4 text-[#1677ff]" />
                 教育数字化，不止于系统，而是场景
               </span>
-              <div className="space-y-4">
-              <p className="text-sm uppercase tracking-[0.18em] text-[#1677ff]">AI + Low-code + Data</p>
-              <h1 className="text-4xl font-semibold leading-tight text-[#0f172a] sm:text-5xl lg:text-6xl">
+            <div className="space-y-3 sm:space-y-4">
+              <p className="text-xs uppercase tracking-[0.16em] text-[#1677ff] sm:text-sm">AI + Low-code + Data</p>
+              <h1 className="text-[28px] font-semibold leading-tight text-[#0f172a] sm:text-4xl lg:text-5xl">
                 面向基础教育的场景化数字化伙伴
               </h1>
-              <p className="max-w-2xl text-[15px] leading-7 text-slate-700">
+              <p className="max-w-2xl text-[14px] leading-6 text-slate-700 sm:text-[15px] sm:leading-7">
                 服务全国500+学校，深度参与强校工程、课后服务、教师发展等核心场景。以低代码、AI 与数据驱动，打造高效、协同、有温度的教育治理生态。
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               {ctas.map((cta, index) => {
                 const primary = index === 0;
                 return (
@@ -343,7 +343,7 @@ export default function Home() {
         </section>
 
 
-        <section className="section-shell grid gap-6 bg-white p-8 text-[#0f172a] md:grid-cols-3 md:items-center">
+        <section className="section-shell grid gap-5 bg-white p-5 text-[#0f172a] md:grid-cols-3 md:items-center sm:gap-6 sm:p-8">
           <div className="space-y-3">
             <p className="text-sm uppercase tracking-[0.2em] text-[#1677ff]">Why Yili</p>
             <h2 className="text-2xl font-semibold text-[#0f172a]">不止做系统，更做教育治理的可靠伙伴</h2>
@@ -378,7 +378,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="team" className="section-shell grid gap-8 bg-white/90 p-8 md:grid-cols-[1.1fr_0.9fr]">
+        <section id="team" className="section-shell grid gap-6 bg-white/90 p-5 md:grid-cols-[1.1fr_0.9fr] sm:gap-8 sm:p-8">
           <div className="space-y-4">
             <h2 className="text-3xl font-semibold text-slate-900">关于屹力教育</h2>
             <p className="text-lg text-slate-700">
@@ -422,7 +422,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-shell space-y-8 bg-white p-8 text-[#0f172a]">
+        <section className="section-shell space-y-6 bg-white p-5 text-[#0f172a] sm:space-y-8 sm:p-8">
           <div className="space-y-2">
             <h2 className="text-3xl font-semibold text-[#0f172a]">我们的团队</h2>
             <p className="text-slate-700">“教育人 + 技术人”的复合型队伍，兼具行业理解力与产品创新力。</p>
@@ -437,7 +437,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-shell space-y-8 bg-white px-8 py-10 text-[#0f172a]">
+        <section className="section-shell space-y-6 bg-white px-5 py-6 text-[#0f172a] sm:space-y-8 sm:px-8 sm:py-10">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div className="space-y-2">
               <p className="text-sm uppercase tracking-[0.2em] text-[#1677ff]">Product Matrix</p>
@@ -527,7 +527,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-shell space-y-8 bg-white p-8 text-[#0f172a] backdrop-blur">
+        <section className="section-shell space-y-6 bg-white p-5 text-[#0f172a] backdrop-blur sm:space-y-8 sm:p-8">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div className="space-y-2">
               <h2 className="text-3xl font-semibold text-[#0f172a]">交付方法论</h2>
@@ -552,7 +552,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="cases" className="section-shell space-y-8 bg-white p-8 text-[#0f172a]">
+        <section id="cases" className="section-shell space-y-6 bg-white p-5 text-[#0f172a] sm:space-y-8 sm:p-8">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div className="space-y-2">
               <h2 className="text-3xl font-semibold text-[#0f172a]">用户案例与证言</h2>
@@ -566,15 +566,15 @@ export default function Home() {
               <ExternalLink className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-3 md:gap-4 md:grid-cols-3">
             {featuredCases
               .flatMap((group) => group.items.map((item) => ({ ...item, segment: group.segment })))
               .slice(0, 6)
               .map((project) => (
                 <a
                   key={project.name}
-                  href={`/cases/${project.slug}`}
-                  className="group block h-full rounded-2xl border border-[#d9e2f5] bg-white p-6 shadow-sm shadow-blue-100 ring-1 ring-[#eef3ff] transition hover:-translate-y-1 hover:border-[#8ab8ff] hover:ring-[#8ab8ff]"
+                  href={`${assetPrefix}/cases/${project.slug}/`}
+                  className="group block h-full rounded-2xl border border-[#d9e2f5] bg-white p-4 sm:p-6 shadow-sm shadow-blue-100 ring-1 ring-[#eef3ff] transition hover:-translate-y-1 hover:border-[#8ab8ff] hover:ring-[#8ab8ff]"
                 >
                   <div className="flex items-start gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#e8f1ff] text-[#1677ff]">
@@ -613,7 +613,7 @@ export default function Home() {
             <p className="text-sm font-semibold text-[#0f172a]">部分合作客户</p>
             <div className="space-y-2">
               {logoRows.map(({ track, speed }, row) => (
-                <div key={row} className="group/logo-row relative h-28 overflow-hidden rounded-2xl bg-gradient-to-r from-white/90 via-[#f7faff] to-white/90 ring-1 ring-[#e8eefc] backdrop-blur">
+                <div key={row} className="group/logo-row relative h-24 overflow-hidden rounded-2xl bg-gradient-to-r from-white/90 via-[#f7faff] to-white/90 ring-1 ring-[#e8eefc] backdrop-blur sm:h-28">
                   <div
                     className="flex w-max gap-1 animate-[logoRow_var(--d)_linear_infinite] group-hover/logo-row:[animation-play-state:paused]"
                     style={{ "--d": `${speed}s` } as CSSProperties}
@@ -621,7 +621,7 @@ export default function Home() {
                     {track.map((logo, idx) => (
                       <div
                         key={`${logo}-${idx}`}
-                        className="group flex h-24 w-24 items-center justify-center rounded-2xl border border-white/50 bg-white/85 px-2 shadow-lg shadow-blue-50/60 backdrop-blur-sm transition hover:-translate-y-1.5 hover:border-[#8ab8ff] hover:shadow-blue-100"
+                        className="group flex h-20 w-20 items-center justify-center rounded-2xl border border-white/50 bg-white/85 px-2 shadow-lg shadow-blue-50/60 backdrop-blur-sm transition hover:-translate-y-1.5 hover:border-[#8ab8ff] hover:shadow-blue-100 sm:h-24 sm:w-24"
                       >
                         <Image
                           src={logo}
@@ -642,7 +642,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="jobs" className="section-shell grid gap-8 bg-white/90 p-8 md:grid-cols-[1.1fr_0.9fr]">
+        <section id="jobs" className="section-shell grid gap-6 bg-white/90 p-6 sm:p-8 md:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-4">
             <h2 className="text-3xl font-semibold text-slate-900">加入我们</h2>
             <p className="text-lg text-slate-700">
@@ -714,12 +714,12 @@ export default function Home() {
                         <p className="text-[11px] uppercase tracking-[0.16em] text-white/80">{qr.label}</p>
                         <p className="text-sm font-semibold text-white">{qr.note}</p>
                       </div>
-                      <div className="flex h-32 w-32 items-center justify-center overflow-hidden rounded-xl border border-white/45 bg-white/15 ring-1 ring-white/20">
+                      <div className="flex h-28 w-28 items-center justify-center overflow-hidden rounded-xl border border-white/45 bg-white/15 ring-1 ring-white/20 sm:h-32 sm:w-32">
                         <Image
                           src={`${assetPrefix}${qr.src}`}
                           alt={qr.label}
-                          width={140}
-                          height={140}
+                          width={170}
+                          height={170}
                           className="h-full w-full object-cover"
                         />
                       </div>
@@ -764,10 +764,10 @@ export default function Home() {
             <div className="grid gap-2 text-sm text-slate-700">
               <a className="hover:text-[#1677ff]" href="mailto:bd@yiliedu.com">预约产品演示</a>
               <a className="hover:text-[#1677ff]" href="mailto:bd@yiliedu.com">联系商务合作</a>
-              <Link className="hover:text-[#1677ff]" href="/solutions">
+              <Link className="hover:text-[#1677ff]" href={`${assetPrefix}/solutions/`}>
                 下载方案（可定制）
               </Link>
-              <Link className="text-slate-500 hover:text-[#1677ff]" href="/admin">
+              <Link className="text-slate-500 hover:text-[#1677ff]" href={`${assetPrefix}/admin/`}>
                 管理后台（内部）
               </Link>
             </div>
@@ -796,3 +796,5 @@ export default function Home() {
     </div>
   );
 }
+
+export const dynamic = "force-static";

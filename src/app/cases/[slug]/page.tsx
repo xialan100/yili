@@ -325,6 +325,9 @@ type Params = { params: Promise<{ slug: string }> };
 export default async function CasePage({ params }: Params) {
   const { slug } = await params;
   const detail = caseDetails.find((c) => c.slug === slug);
+  const basics = detail?.basics.filter((b) => !b.includes("合作时间")) ?? [];
+  const schoolType = basics.find((b) => b.startsWith("学校类型"));
+  const serviceScope = basics.find((b) => b.startsWith("服务内容"));
 
   if (!detail) {
     return (
@@ -363,7 +366,7 @@ export default async function CasePage({ params }: Params) {
             <div className="grid gap-2 rounded-2xl border border-[#e0eaff] bg-[#f7faff] p-4 shadow-inner shadow-blue-50/60">
               <p className="text-sm font-semibold text-[#0f172a]">基本信息</p>
               <div className="grid gap-2 sm:grid-cols-2">
-                {detail.basics.map((item) => (
+                {basics.map((item) => (
                   <div key={item} className="rounded-xl bg-white/90 px-3 py-2 text-sm text-slate-700 ring-1 ring-[#e8eefc] shadow-sm">
                     {item}
                   </div>
@@ -375,35 +378,28 @@ export default async function CasePage({ params }: Params) {
 
         <div className="grid gap-4 rounded-3xl border border-[#d9e2f5] bg-white/95 p-6 shadow-xl shadow-blue-50/70 ring-1 ring-[#e8eefc]">
           <div className="flex items-center gap-2">
-            <p className="text-xs uppercase tracking-[0.18em] text-[#1677ff]">解决路径</p>
-            <span className="rounded-full bg-[#f0f6ff] px-2 py-1 text-[11px] text-[#0f294d] ring-1 ring-[#c7d8ff]">从痛点到落地</span>
+            <p className="text-xs uppercase tracking-[0.18em] text-[#1677ff]">客户故事</p>
+            <span className="rounded-full bg-[#f0f6ff] px-2 py-1 text-[11px] text-[#0f294d] ring-1 ring-[#c7d8ff]">从背景到成效</span>
           </div>
-          <div className="mt-3 grid gap-3">
-            {detail.solutions.map((item, idx) => (
-              <div
-                key={item}
-                className="flex gap-3 rounded-2xl bg-[#f7faff] p-4 ring-1 ring-[#e0eaff] shadow-sm shadow-blue-50/60"
-              >
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e8f1ff] text-sm font-semibold text-[#1677ff]">
-                  {idx + 1}
-                </div>
-                <p className="text-slate-700 leading-6">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid gap-4 rounded-3xl border border-[#d9e2f5] bg-white/95 p-6 shadow-xl shadow-blue-50/70 ring-1 ring-[#e8eefc]">
-          <div className="flex items-center gap-2">
-            <p className="text-xs uppercase tracking-[0.18em] text-[#1677ff]">结果与变化</p>
-            <span className="rounded-full bg-[#f0f6ff] px-2 py-1 text-[11px] text-[#0f294d] ring-1 ring-[#c7d8ff]">用户视角</span>
-          </div>
-          <div className="grid gap-3 md:grid-cols-2">
-            {detail.effects.map((item) => (
-              <div key={item} className="rounded-2xl bg-[#f7faff] p-4 ring-1 ring-[#e0eaff] shadow-sm shadow-blue-50/60">
-                <p className="text-slate-700 leading-6">{item}</p>
-              </div>
-            ))}
+          <div className="space-y-3 text-slate-700 leading-7">
+            <p className="text-base font-semibold text-[#0f172a]">起点 · 场景</p>
+            <p>
+              {detail.name}
+              {schoolType ? `，${schoolType.replace("学校类型：", "")}` : ""}。他们遇到的问题是真实的：
+              {detail.background}
+            </p>
+            <p className="text-base font-semibold text-[#0f172a]">行动 · 共创落地</p>
+            <p>
+              {serviceScope ? `围绕“${serviceScope.replace("服务内容：", "")}”` : "我们"} 与校方并肩梳理业务脉络，把每一步都落到场景里：
+              {detail.solutions.map((item, idx) => `${idx + 1}）${item}`).join("；")}。
+            </p>
+            <p className="text-base font-semibold text-[#0f172a]">改变 · 现场反馈</p>
+            <p>
+              结果不是冷冰冰的数据，而是现场松了一口气的老师和更透明的管理：{detail.effects.join("；")}
+            </p>
+            <p className="rounded-2xl bg-[#f7faff] px-4 py-3 text-sm text-[#0f172a] ring-1 ring-[#e0eaff]">
+              每个案例都代表一次照见真实需求的共创。从治理到课堂，从流程到温度，学校收获的是真正可复制、能落地、可持续的数字化经验。
+            </p>
           </div>
         </div>
       </main>
@@ -414,3 +410,5 @@ export default async function CasePage({ params }: Params) {
 export function generateStaticParams() {
   return caseDetails.map((c) => ({ slug: c.slug }));
 }
+
+export const dynamic = "force-static";

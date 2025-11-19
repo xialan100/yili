@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Activity, ArrowRight, Layers, Sparkles, Target, Users } from "lucide-react";
 import { solutions } from "./data";
 
+const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX ?? "";
+
 const icons = [Sparkles, Layers, Activity, Users, Target];
 
 export default function SolutionsPage() {
@@ -20,7 +22,7 @@ export default function SolutionsPage() {
           return (
             <Link
               key={item.slug}
-              href={`/solutions/${item.slug}`}
+              href={`${assetPrefix}/solutions/${item.slug}/`}
               className="group relative overflow-hidden rounded-2xl border border-[#d9e2f5] bg-white/90 p-6 ring-1 ring-[#e8eefc] shadow-lg shadow-blue-100/60 backdrop-blur-sm transition hover:-translate-y-1 hover:border-[#8ab8ff] hover:ring-[#8ab8ff]"
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(22,119,255,0.08),transparent_45%),radial-gradient(circle_at_80%_0%,rgba(122,216,255,0.1),transparent_50%)] opacity-80" />

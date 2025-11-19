@@ -1,6 +1,8 @@
 import { ExternalLink, Factory } from "lucide-react";
 import { allCases, CaseSummary } from "./case-list";
 
+const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX ?? "";
+
 const segments: CaseSummary["segment"][] = ["幼儿园", "小学/九年制", "初中", "高中", "职业高中"];
 
 export default function CasesIndex() {
@@ -29,7 +31,7 @@ export default function CasesIndex() {
                   {grouped.map((project) => (
                     <a
                       key={project.slug}
-                      href={`/cases/${project.slug}`}
+                      href={`${assetPrefix}/cases/${project.slug}/`}
                       className="group block rounded-2xl bg-white/5 p-5 ring-1 ring-white/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-900/40"
                     >
                       <div className="flex items-center gap-3">

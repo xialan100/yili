@@ -177,3 +177,5 @@ export default async function SolutionDetail({ params }: { params: Promise<{ slu
 export function generateStaticParams() {
   return solutions.map((s) => ({ slug: s.slug }));
 }
+
+export const dynamic = "force-static";
