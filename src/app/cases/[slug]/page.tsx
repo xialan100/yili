@@ -357,22 +357,10 @@ export default async function CasePage({ params }: Params) {
         </div>
 
         <div className="grid gap-4 rounded-3xl border border-[#d9e2f5] bg-white/95 p-6 shadow-xl shadow-blue-50/70 ring-1 ring-[#e8eefc]">
-          <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-            <div className="space-y-3">
-              <p className="text-xs uppercase tracking-[0.18em] text-[#1677ff]">故事开场 · 场景全貌</p>
-              <h2 className="text-2xl font-semibold text-[#0f172a]">学校在解决什么问题？</h2>
-              <p className="text-slate-700 leading-7">{detail.background}</p>
-            </div>
-            <div className="grid gap-2 rounded-2xl border border-[#e0eaff] bg-[#f7faff] p-4 shadow-inner shadow-blue-50/60">
-              <p className="text-sm font-semibold text-[#0f172a]">基本信息</p>
-              <div className="grid gap-2 sm:grid-cols-2">
-                {basics.map((item) => (
-                  <div key={item} className="rounded-xl bg-white/90 px-3 py-2 text-sm text-slate-700 ring-1 ring-[#e8eefc] shadow-sm">
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.18em] text-[#1677ff]">故事开场 · 场景全貌</p>
+            <h2 className="text-2xl font-semibold text-[#0f172a]">学校在解决什么问题？</h2>
+            <p className="text-slate-700 leading-7">{detail.background}</p>
           </div>
         </div>
 
