@@ -7,14 +7,14 @@ const segments: CaseSummary["segment"][] = ["幼儿园", "小学/九年制", "�
 
 export default function CasesIndex() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_15%_20%,rgba(59,130,246,0.27),transparent_30%),radial-gradient(circle_at_85%_10%,rgba(45,212,191,0.2),transparent_35%),linear-gradient(135deg,#0b1223,#0d172e)]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(60deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:140px_140px]" />
-      <main className="mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-16 pt-16 sm:px-10">
-        <header className="space-y-3">
-          <p className="text-sm uppercase tracking-[0.2em] text-blue-200">Case Library</p>
-          <h1 className="text-3xl font-semibold text-white">用户案例 · 全部</h1>
-          <p className="text-slate-300">按学段分组查看，点击可进入详细案例页面。</p>
+    <div className="relative min-h-screen overflow-hidden bg-[#f5f8ff] text-[#0f172a]">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(22,119,255,0.14),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(122,216,255,0.14),transparent_40%),linear-gradient(135deg,#e8f1ff,#f7faff)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-36 bg-gradient-to-b from-[#1677ff]/10 via-white/70 to-transparent" />
+      <main className="mx-auto flex max-w-6xl flex-col gap-8 px-5 pb-14 pt-12 sm:px-10 sm:gap-10">
+        <header className="space-y-2">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#1677ff]">Case Library</p>
+          <h1 className="text-3xl font-semibold text-[#0f172a] sm:text-4xl">用户案例 · 全部</h1>
+          <p className="text-slate-700">按学段分组查看，点击可进入详细案例页面。</p>
         </header>
 
         <div className="grid gap-8">
@@ -22,29 +22,29 @@ export default function CasesIndex() {
             const grouped = allCases.filter((c) => c.segment === segment);
             if (grouped.length === 0) return null;
             return (
-              <div key={segment} className="space-y-4 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl ring-1 ring-white/10 backdrop-blur">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-2xl font-semibold text-white">{segment}案例</h2>
-                  <div className="h-px flex-1 bg-gradient-to-r from-white/30 via-white/10 to-transparent ml-4" />
+              <div key={segment} className="space-y-4 rounded-3xl border border-[#d9e2f5] bg-white/90 p-5 shadow-lg shadow-blue-50/60 ring-1 ring-[#e8eefc]">
+                <div className="flex items-center justify-between gap-3">
+                  <h2 className="text-xl font-semibold text-[#0f172a]">{segment}案例</h2>
+                  <div className="hidden h-px flex-1 bg-gradient-to-r from-[#1677ff]/40 via-[#8ab8ff]/20 to-transparent sm:block" />
                 </div>
-                <div className="grid gap-4 md:grid-cols-3">
+                <div className="grid gap-3 sm:gap-4 md:grid-cols-3">
                   {grouped.map((project) => (
                     <a
                       key={project.slug}
                       href={`${assetPrefix}/cases/${project.slug}/`}
-                      className="group block rounded-2xl bg-white/5 p-5 ring-1 ring-white/10 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-900/40"
+                      className="group block rounded-2xl border border-[#e0eaff] bg-[#f7faff] p-4 ring-1 ring-[#e8eefc] transition hover:-translate-y-1 hover:border-[#8ab8ff] hover:ring-[#8ab8ff] hover:shadow-lg hover:shadow-blue-100/60"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[#1677ff] ring-1 ring-[#d9e2f5]">
                           <Factory className="h-5 w-5" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{project.name}</h3>
-                          <p className="text-xs text-slate-200">{segment}</p>
+                          <h3 className="text-lg font-semibold text-[#0f172a]">{project.name}</h3>
+                          <p className="text-xs text-slate-600">{segment}</p>
                         </div>
                       </div>
-                      <p className="mt-3 text-sm text-slate-100">{project.result}</p>
-                      <div className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-100 group-hover:text-white">
+                      <p className="mt-3 text-sm text-slate-700">{project.result}</p>
+                      <div className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[#1677ff] group-hover:text-[#0f5fd8]">
                         查看详情 <ExternalLink className="h-4 w-4" />
                       </div>
                     </a>
