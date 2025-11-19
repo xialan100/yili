@@ -250,7 +250,7 @@ export default function Home() {
                 return (
                   <Link
                     key={cta.label}
-                    className={`hover-glow inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition ${primary ? "bg-[#1677ff] text-white tracking-wide shadow-lg shadow-[rgba(22,119,255,0.35)] hover:bg-[#0f5fd8]" : "border border-[#d9e2f5] bg-white text-[#0f172a] hover:border-[#8ab8ff] hover:bg-blue-50"}`}
+                    className={`hover-glow inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition sm:w-auto ${primary ? "bg-[#1677ff] text-white tracking-wide shadow-lg shadow-[rgba(22,119,255,0.35)] hover:bg-[#0f5fd8]" : "border border-[#d9e2f5] bg-white text-[#0f172a] hover:border-[#8ab8ff] hover:bg-blue-50"}`}
                     href={cta.href}
                   >
                     {cta.label}

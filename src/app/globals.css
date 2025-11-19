@@ -296,4 +296,19 @@
     min-width: 140px;
     height: 80px;
   }
+
+  .section-shell {
+    padding: 1.25rem !important;
+    gap: 1rem !important;
+  }
+  .section-shell h1 {
+    font-size: 1.75rem;
+  }
+  .section-shell h2 {
+    font-size: 1.15rem;
+  }
+  .section-shell p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
 }
