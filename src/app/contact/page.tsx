@@ -1,7 +1,7 @@
  "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowRight, Phone, Building2, NotebookPen, User } from "lucide-react";
+import { ArrowRight, Phone, Building2, NotebookPen, User, Mail } from "lucide-react";
 import Image from "next/image";
 const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX ?? "";
 import Link from "next/link";
@@ -18,7 +18,7 @@ export default function ContactPage() {
     const body = encodeURIComponent(
       `姓名：${form.name}\n手机：${form.phone}\n机构：${form.org}\n需求：${form.need}`,
     );
-    return `mailto:bd@yiliedu.com?subject=预约演示信息登记&body=${body}`;
+    return `mailto:frank7215@dingtalk.com?subject=预约演示信息登记&body=${body}`;
   }, [form]);
 
   const onChange = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -61,16 +61,16 @@ export default function ContactPage() {
           <div className="grid gap-3 rounded-xl bg-[#f7faff] p-4 ring-1 ring-[#e5edff]">
             <div className="flex items-center gap-3 text-sm text-slate-800">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white shadow-sm ring-1 ring-[#e5edff]">
-                <Phone className="h-4 w-4 text-[#1677ff]" />
+                <Mail className="h-4 w-4 text-[#1677ff]" />
               </span>
               <div>
-                <p className="text-xs uppercase tracking-[0.14em] text-slate-500">商务手机</p>
-                <p className="font-semibold">186****0000</p>
+                <p className="text-xs uppercase tracking-[0.14em] text-slate-500">商务邮箱</p>
+                <p className="font-semibold">frank7215@dingtalk.com</p>
               </div>
             </div>
           </div>
           <div className="rounded-xl bg-[#f0f6ff] px-4 py-3 text-sm text-[#0f294d] ring-1 ring-[#d9e2f5]">
-            或直接发送「学校/机构名称 + 需求场景 + 可回电时间」至邮箱，我们将优先处理。
+            或直接发送「学校/机构名称 + 需求场景 + 可回电时间」至 frank7215@dingtalk.com，我们将优先处理。
           </div>
         </div>
 
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 发送登记邮件
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <p className="text-xs text-slate-500">提交后将自动打开邮件客户端，可直接发送到 bd@yiliedu.com</p>
+              <p className="text-xs text-slate-500">提交后将自动打开邮件客户端，可直接发送到 frank7215@dingtalk.com</p>
             </div>
           </div>
         </div>
